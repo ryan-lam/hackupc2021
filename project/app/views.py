@@ -18,13 +18,15 @@ def index(request):
             return render (request, "index.html", {
                 "attempt":True
                 })
-    
+   
     else: # GET METHOD
         request.session.flush()
         return render(request, "index.html", {
             "attempt":False
         })
 
+def dash(request):
+    return render (request, "dashboard.html", {"person": Profile.objects.get(email=request.session["email"])})
 
 # SIGNUP PAGE
 def signup(request):
@@ -65,3 +67,8 @@ def housing(request, id):
     images = Image.objects.filter(housing=house)
     return render(request, "house.html", {'images':images, "house":house})
 
+def jobs(request):
+    return render(request, "jobs.html", {"person": Profile.objects.get(email=request.session["email"])})
+
+def profile(request):
+    return render(request, "profile.html", {"person": Profile.objects.get(email=request.session["email"])})

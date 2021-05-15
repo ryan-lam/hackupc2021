@@ -120,11 +120,13 @@
   }
   
   .fa-primary {
-    color: #ff7eee;
+    /* color: #ff7eee; */
+    color: #12aefc;
   }
   
   .fa-secondary {
-    color: #df49a6;
+    /* color: #df49a6; */
+    color: #008dd4;
   }
   
   .fa-primary,
@@ -177,6 +179,18 @@
     box-sizing: border-box;
     height: 100vh;
 }
+
+.identity{
+    width: 80%; 
+    margin: auto; 
+    height: 400px; 
+    margin-top: 20px; 
+    background-color: white;
+
+    border-radius: 30px;
+    border: 2px solid #bfbfbf;
+}
+
 
 
   

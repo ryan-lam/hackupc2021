@@ -6,6 +6,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("", views.index, name="index"),
     path("housing/<int:id>", views.housing, name="housing"),
+    path("jobs", views.jobs, name="jobs"),
+    path("dash", views.dash, name="dash"),
+    path("profile", views.profile, name="profile"),
 ]
 
 if settings.DEBUG:
