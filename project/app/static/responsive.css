@@ -27,6 +27,8 @@
     main {
       margin: 0;
     }
+
+    
   }
   
   /* Large screens */
@@ -58,5 +60,6 @@
         width: calc(100vw - 5rem); 
         float: right;
     }
+
 
   }
