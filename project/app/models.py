@@ -37,6 +37,6 @@ class Housing(models.Model):
     location = models.CharField(max_length=128)
     info = models.CharField(max_length=128)
     cost = models.IntegerField()
-    images = models.ImageField()
+    images = models.ImageField(upload_to='images/')
     def __str__(self):
         return f"{self.address}, {self.location}, {self.info}, {self.cost}"
