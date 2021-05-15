@@ -6,19 +6,21 @@
         <link href="../static/style.css" type="text/css" rel="stylesheet">
         <link href="../static/responsive.css" type="text/css" rel="stylesheet">
     </head>
-    <body>
-        <nav class="nav" style="height: 70px; background-color: white; box-shadow: 1px 2px 4px #bfbfbf;">
+    <body style="background-color: #005580;">
+        <nav class="nav" style="height: 70px; background-color: white; box-shadow: 1px 2px 4px black;">
             <a href="" style="text-decoration: none; display: block; margin: auto;"><h1 style="text-align: center; color: #005580;" class="fw-bold">JOBIFY</h1></a>
         </nav>
-        <form action="{% url 'index' %}" method="POST" style="background-color: azure; " class="login">
+        <form action="{% url 'index' %}" method="POST" class="login">
             {% csrf_token %}
             <h1 style="text-align: center; margin-top: 20px;">Login</h1>
-            <label style="margin-left: 10%; font-size: 13px;">Email</label>
-            <input type="text" class="form-control" id="inputEmail4" name="email" style="width: 80%; margin: auto; border-radius: 10px;" required>
-            <label style="margin-left: 10%; padding-top: 20px; font-size: 13px;">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" name="password" style="width: 80%; margin: auto; border-radius: 10px;" required>
+            <label style="margin-left: 10%; font-size: 13px;">EMAIL</label>
+            <input type="text" class="form-control" id="inputEmail4" name="email" style="width: 80%; margin: auto; border-radius: 10px; border: 2px solid black;" required>
+            <label style="margin-left: 10%; padding-top: 20px; font-size: 13px;">PASSWORD</label>
+            <input type="password" class="form-control" id="inputPassword4" name="password" style="width: 80%; margin: auto; border-radius: 10px; border: 2px solid black;" required>
             <button class="btn" type="submit" style="width: 200px; display: block; margin: auto; margin-top: 30px; border-radius: 10px; background-color: #005580; color: white;">SUBMIT</button>
-  
+            {% if attempt %}
+            <p style="text-align: center; color: red; margin-top: 20px;">Login failed. Please try again</p>
+            {% endif %}
         </form>
     </body>
 </html>

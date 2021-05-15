@@ -13,7 +13,7 @@ def index(request):
 
         if Profile.objects.filter(email=email, password=password).exists(): # CHECK IF USER IN DB
             request.session["email"] = email
-            return HttpResponseRedirect(reverse("dashboard"))
+            return render (request, "dashboard.html", {"person": Profile.objects.get(email=email)})
         else: # IF USER NOT IN DB
             return render (request, "index.html", {
                 "attempt":True
