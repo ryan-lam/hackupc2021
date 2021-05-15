@@ -11,10 +11,10 @@ def index(request):
         email = request.POST["email"]
         password = request.POST["password"]
 
-        if Profile.objects.filter(email=email, password=password).exists():
+        if Profile.objects.filter(email=email, password=password).exists(): # CHECK IF USER IN DB
             request.session["email"] = email
             return HttpResponseRedirect(reverse("dashboard"))
-        else:
+        else: # IF USER NOT IN DB
             return render (request, "index.html", {
                 "attempt":True
                 })
@@ -38,12 +38,18 @@ def signup(request):
         major = request.POST["major"]
         gpa = request.POST["gpa"]
 
-        try:
-            profile = Profile(name=name, age=age, gender=gender, major=major, uni_name=uni_name, email=email, password=password, gpa=gpa)
-            profile.save()
-            request.session["email"] = email
-            return HttpResponseRedirect(reverse("dashboard"))
-        except:
+        try: # CREATE ACCOUNT
+            if Profile.object.filter(email=email).exists(): # CHECK IF EMAIL IS ALREADY USED
+                return render(request, "signup.html", {
+                "attempt":True, "email":"This email is already in use"
+            })
+            else: # IF EMAIL IS NOT IN USE
+                profile = Profile(name=name, age=age, gender=gender, major=major, uni_name=uni_name, email=email, password=password, gpa=gpa)
+                profile.save()
+                request.session["email"] = email
+                return HttpResponseRedirect(reverse("dashboard"))
+
+        except: # IF UNABLE TO CREATE ACCOUNT
             return render(request, "signup.html", {
                 "attempt":True
             })
@@ -56,10 +62,3 @@ def signup(request):
 
 
 
-
-
-
-
-
-def signup(request):
-    pass
