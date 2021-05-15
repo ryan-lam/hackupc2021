@@ -8,11 +8,11 @@ from .models import Profile, Job, Housing
 # INDEX PAGE
 def index(request):
     if request.method == "POST":
-        username = request.POST["username"]
+        email = request.POST["email"]
         password = request.POST["password"]
 
-        if Profile.objects.filter(username=username, password=password).exists():
-            request.session["username"] = username
+        if Profile.objects.filter(email=email, password=password).exists():
+            request.session["email"] = email
             return HttpResponseRedirect(reverse("dashboard"))
         else:
             return render (request, "index.html", {
@@ -29,7 +29,7 @@ def index(request):
 # SIGNUP PAGE
 def signup(request):
     if request.method == "POST":
-        username = request.POST["username"]
+        email = request.POST["email"]
         password = request.POST["password"]
         name = request.POST["name"]
         age = request.POST["age"]
@@ -41,7 +41,7 @@ def signup(request):
         try:
             profile = Profile(name=name, age=age, gender=gender, major=major, uni_name=uni_name, email=email, password=password, gpa=gpa)
             profile.save()
-            request.session["username"] = username
+            request.session["email"] = email
             return HttpResponseRedirect(reverse("dashboard"))
         except:
             return render(request, "signup.html", {
