@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("", views.index, name="index"),
+    path("housing/<int:id>", views.housing, name="housing"),
 ]
 
 if settings.DEBUG:

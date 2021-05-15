@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django import forms
 from django.urls import reverse
-from .models import Profile, Job, Housing
+from .models import Profile, Job, Housing, Image
 
 
 # INDEX PAGE
@@ -60,5 +60,8 @@ def signup(request):
         })
 
 
-
+def housing(request, id):
+    house = Housing.objects.get(id=id)
+    images = Image.objects.filter(housing=house)
+    return render(request, "house.html", {'images':images, "house":house})
 
