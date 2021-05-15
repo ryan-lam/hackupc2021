@@ -23,7 +23,7 @@ class Profile(models.Model):
 class Job(models.Model):
     position = models.CharField(max_length=64)
     company = models.CharField(max_length=64)
-    description = models.CharField(max_length=128)
+    description = models.CharField(max_length=500)
     hourly_pay = models.IntegerField()
     hours = models.IntegerField()
     location = models.CharField(max_length=64)
