@@ -126,11 +126,11 @@
         </nav>
 
     <main>
-
+      <h1 style="text-align: center; text-decoration: underline; margin-top: 20px;">Housing Near You</h1>
         {% for loc, houses in locations.items %}
             <div style="width: 90%; border-radius: 10px; background-color: #c7ecff; margin: auto; margin-top: 20px;">
                 <div style="height: 20px;"></div>
-                <h2 style="margin-left: 30px; width: fit-content;">City: {{ loc }} </h2>    
+                <h2 style="margin-left: 30px; width: fit-content;">{{ loc }} </h2>    
                 {% for house in houses %}
 
                 

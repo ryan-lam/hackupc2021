@@ -61,7 +61,7 @@
                 </li>
 
                 <li class="nav-item homemobile">
-                    <a href="dash" class="nav-link">
+                    <a href="../dash" class="nav-link">
                       
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
                             <path  class="fa-primary" d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
@@ -71,7 +71,7 @@
                   </li>
         
               <li class="nav-item">
-                <a href="jobs" class="nav-link">
+                <a href="../jobs" class="nav-link">
                   
                   <svg class="fa-group svg-inline--fa fa-cat fa-w-16 fa-9x" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
                     <path  class="fa-primary" d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
@@ -82,7 +82,7 @@
               </li>
         
               <li class="nav-item">
-                <a href="houses" class="nav-link">
+                <a href="../houses" class="nav-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
                         <path class="fa-primary" fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
                         <path class="fa-primary" fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
@@ -92,7 +92,7 @@
               </li>
         
               <li class="nav-item">
-                <a href="profile" class="nav-link">
+                <a href="../profile" class="nav-link">
                   
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-person" viewBox="0 0 16 16" class="fa-primary">
                     <path class="fa-primary" d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -107,7 +107,7 @@
               <li class="nav-item" id="themeButton">
                 <a href="/" class="nav-link">
                   
-                  <span class="link-text">Log Out</span>
+                  <span class="../logout">Log Out</span>
                 </a>
               </li>
             </ul>
@@ -117,7 +117,8 @@
 
         <h1 style="margin-top: 20px; text-align: center;">{{ house.info }}</h1>
         <p style="text-align: center;">{{ house.location }} - {{ house.address }}</p>
-        <p style="text-align: center; width: f;" class="special">${{ house.cost }} per month</p>
+        <p style="text-align: center;" class="special">${{ house.cost }} per month</p>
+        <p style="text-align: center; width: fit-content; margin:auto; width: 80%" class="special">{{ house.description }}</p>
         <div style="height: 20px;"></div>
         <div style="display: flex; flex-wrap: wrap;width: 100%; justify-content: center;">
         {% for im in images %}

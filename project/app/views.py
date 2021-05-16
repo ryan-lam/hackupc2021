@@ -78,6 +78,8 @@ def profile(request):
 def logout(request):
     for key in list(request.session.keys()):
         del request.session[key]
-    return render(request, "index.html", {
-            "attempt":False
-        })
+    request.session.flush()
+    return HttpResponseRedirect(reverse("index"))
+    # return render(request, "index.html", {
+    #         "attempt":False
+    #     })

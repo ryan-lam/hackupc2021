@@ -38,6 +38,7 @@ class Housing(models.Model):
     location = models.CharField(max_length=128)
     info = models.CharField(max_length=128)
     cost = models.IntegerField()
+    description = models.CharField(max_length=2000, default="null")
     def __str__(self):
         return f"{self.address}, {self.location}, {self.info}, {self.cost}"
 
