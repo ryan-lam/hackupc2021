@@ -141,7 +141,7 @@
                 {% for job in jobs %}
                 <div style="width: 90%; border-radius: 10px; background-color: #c7ecff; margin: auto; ">
                     <div style="height: 20px;"></div>
-                    <a href="job/{{ job.company }}/{{ job.location }}" style="width: fit-content; margin-left: 30px;" class="job-title"> {{ job.position }}</a>
+                    <a href="job/{{ job.company }}/{{ job.location }}" style="width: fit-content; margin-left: 30px;" class="job-title"> {{ job.position }} ↗</a>
                     <!-- <h2 style="width: fit-content; margin-left: 30px;"> {{ job.position }} - {{ job.company }}</h2> -->
                     <p style="text-align: left; width: 80%; margin-left: 30px; padding-bottom: 30px;"> • {{ job.company }} <br> • ${{ job.hourly_pay }} @ {{ job.hours }} hours/week <br> • {{ job.location }}</p>
                 </div>

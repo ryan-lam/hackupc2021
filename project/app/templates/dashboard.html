@@ -12,6 +12,17 @@
                     height: 90px;
                     width: 100vw;
                 }
+              
+              .job-title:hover{
+                color: #12aefc;
+                cursor: pointer;
+            }
+              .job-title{
+    
+                  text-decoration: none;
+                  font-size: 30px;
+                  color: #008dd4;
+              }
             }
 
         </style>
@@ -114,7 +125,9 @@
                   <h1 style="margin-top: 10px; text-align: center; text-decoration: underline">Relevant Jobs</h1>
                   <br>
                   {% for job in suggestions %}
-                    <h2 style="margin-left: 30px;"> {{ job.position }} </h2>
+                    <a href="job/{{ job.company }}/{{ job.location }}" style="width: fit-content; margin-left: 30px; text-decoration: none; color:black" class="job-title">
+                      <h2 style="margin-left: 30px;"> {{ job.position }}</h2></a>
+                    <!-- <h2 style="margin-left: 30px;"> {{ job.position }} </h2> -->
                     <p style="width: 85%; margin-left: 30px;"> {{ job.description }} </p>
                   {% endfor %}   
                   <div style="height: 10px;"></div>
