@@ -111,7 +111,8 @@
                 </div>
                 <div class="between"></div>
                 <div class="right-dash" style="background-color: #c7ecff; ">
-                  <h1 style="margin-top: 10px; text-align: center;">Relevant Jobs</h1>
+                  <h1 style="margin-top: 10px; text-align: center; text-decoration: underline">Relevant Jobs</h1>
+                  <br>
                   {% for job in suggestions %}
                     <h2 style="margin-left: 30px;"> {{ job.position }} </h2>
                     <p style="width: 85%; margin-left: 30px;"> {{ job.description }} </p>
