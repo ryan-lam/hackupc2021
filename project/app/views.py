@@ -86,6 +86,23 @@ def jobs(request):
     # print(suggestions)
     return render(request, "jobs.html", {"person": Profile.objects.get(email=request.session["email"]), "jobs":jobs})
 
+def job_custom(request):
+    custom = request.POST["job_custom"]
+    
+    all_houses = Housing.objects.filter(location=custom)
+    locations = {}
+    for house in all_houses:
+        if house.location not in locations:
+            locations[house.location] = [house]
+        else:
+            locations[house.location].append(house)
+    return render(request, "houses.html", {'locations': locations, "person": Profile.objects.get(email=request.session["email"])})
+
+
+
+
+
+
 def profile(request):
     return render(request, "profile.html", {"person": Profile.objects.get(email=request.session["email"])})
 

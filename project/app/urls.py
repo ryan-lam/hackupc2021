@@ -17,6 +17,7 @@ urlpatterns = [
     path("houses/profile", views.profile, name="profile"),
     path("job/<str:company>/<str:location>", views.job, name="job"),
     path("houses/job/<str:company>/<str:location>", views.job, name="job"),
+    path("job_custom", views.job_custom, name="job_custom")
 ]
 
 if settings.DEBUG:
