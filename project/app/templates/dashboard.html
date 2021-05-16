@@ -71,7 +71,7 @@
               </li>
         
               <li class="nav-item">
-                <a href="houses" class="nav-link">
+                <a href="../houses" class="nav-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
                         <path class="fa-primary" fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
                         <path class="fa-primary" fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
@@ -102,20 +102,23 @@
             </ul>
         </nav>
 
-            <main style="background-color: bisque;">
+            <main >
                 
-                <div class="left-dash" style="background-color: aquamarine; ">
-                    <h1 style="text-align: center; margin-top: 20px; size: 2rem;">Welcome back <br class="dash-break"> {{ person.name }}!</h1>
+                <div class="left-dash">
+                    <h1 style="text-align: center; margin-top: 20px; size: 2rem; color: #005580;;">Welcome back <br class="dash-break"> {{ person.name }}!</h1>
 
                     <p style="text-align: center; width: 75%; margin: auto; margin-top: 20px;">Did you know that an Apple a day keeps the doctor away?</p>
                 </div>
-                <div class="right-dash" style="background-color: coral; ">
+                <div class="between"></div>
+                <div class="right-dash" style="background-color: #c7ecff; ">
                   <h1 style="margin-top: 10px; text-align: center;">Relevant Jobs</h1>
                   {% for job in suggestions %}
-                    <h2> {{ job.position }} </h2>
-                    <p> {{ job.description }} </p>
+                    <h2 style="margin-left: 30px;"> {{ job.position }} </h2>
+                    <p style="width: 85%; margin-left: 30px;"> {{ job.description }} </p>
                   {% endfor %}   
+                  <div style="height: 10px;"></div>
                 </div>
+                <div style="height: 5rem;"></div>
             </main>
           
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>

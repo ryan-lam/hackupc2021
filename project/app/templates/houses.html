@@ -135,7 +135,7 @@
 
                 
                 <a href='/houses/{{ house.id }}' class="house-list" >
-                    <div>{{ forloop.counter }}</div>
+                    <!-- <div>{{ forloop.counter }}</div> -->
                     
                     <div style="color:black ; margin-left: 10px;">{{ house.info }} </div>
       
@@ -145,7 +145,8 @@
                 <div style="height: 20px;"></div>
             </div>
             
-            {% endfor %}    
+            {% endfor %}   
+            <div style="height: 6rem;"></div> 
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

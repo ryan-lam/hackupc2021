@@ -115,14 +115,18 @@
 
     <main>
 
-        <h1>{{ house.info }}</h1>
-        <p>{{ house.location }} - {{ house.address }}</p>
-        <p>${{ house.cost }} per month</p>
-        <p></p>
-
+        <h1 style="margin-top: 20px; text-align: center;">{{ house.info }}</h1>
+        <p style="text-align: center;">{{ house.location }} - {{ house.address }}</p>
+        <p style="text-align: center;" class="special">${{ house.cost }} per month</p>
+        <div style="height: 20px;"></div>
+        <div style="display: flex; flex-wrap: wrap;width: 100%; justify-content: center;">
         {% for im in images %}
-        <img width="400" height="auto" src="{{ im.image.url }}">
+        
+        <div><img height="auto" src="{{ im.image.url }}" style="display: block; margin: auto;" class="houseimages"></div>
         {% endfor %}
+
+        </div>
+        <div style="height: 5rem;"></div>
 
     </main>
 

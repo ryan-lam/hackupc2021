@@ -12,6 +12,9 @@ urlpatterns = [
     path("profile", views.profile, name="profile"),
     path("logout", views.logout, name="logout"),
     path("houses/logout", views.logout, name="logout"),
+    path("houses/dash", views.dash, name="dash"),
+    path("houses/jobs", views.jobs, name="jobs"),
+    path("houses/profile", views.profile, name="profile"),
 ]
 
 if settings.DEBUG:

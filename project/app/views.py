@@ -40,38 +40,6 @@ def dash(request):
     print(suggestions)
     return render (request, "dashboard.html", {"person": Profile.objects.get(email=request.session["email"]), "suggestions": suggestions})
 
-# SIGNUP PAGE
-def signup(request):
-    if request.method == "POST":
-        email = request.POST["email"]
-        password = request.POST["password"]
-        name = request.POST["name"]
-        age = request.POST["age"]
-        gender = request.POST["gender"]
-        uni_name = request.POST["uni_name"]
-        major = request.POST["major"]
-        gpa = request.POST["gpa"]
-
-        try: # CREATE ACCOUNT
-            if Profile.object.filter(email=email).exists(): # CHECK IF EMAIL IS ALREADY USED
-                return render(request, "signup.html", {
-                "attempt":True, "email":"This email is already in use"
-            })
-            else: # IF EMAIL IS NOT IN USE
-                profile = Profile(name=name, age=age, gender=gender, major=major, uni_name=uni_name, email=email, password=password, gpa=gpa)
-                profile.save()
-                request.session["email"] = email
-                return HttpResponseRedirect(reverse("dashboard"))
-
-        except: # IF UNABLE TO CREATE ACCOUNT
-            return render(request, "signup.html", {
-                "attempt":True
-            })
-
-    else: # GET METHOD
-        return render(request, "signup.html", {
-            "attempt":False
-        })
 
 def houses(request):
     all_houses = Housing.objects.all()

@@ -17,7 +17,8 @@
       align-items:center;
     }
 
-    .navbar-nav li{
+    .nav{
+      height: 100px;
   
     }
 
@@ -33,17 +34,42 @@
 
 	.right-dash{
 		width: 100%; 
-		height: 500px; 
+		height: calc(100vh - 150px - 20px - 5rem); 
 		float: right;
 		overflow: scroll;
+	}
+    .left-dash{
+		width: 100%; 
+		height: 150px; 
 	}
 	.dash-break{
 		display: none;
 	}
+  .login{
+    margin: auto;
+    margin-top: calc((100vh - 550px) / 2);
+    width: 80%;
+      height: 400px;
+      background-color: white;
+      border: 4px solid black;
+      border-radius: 20px;
+}
+    .between{
+        height: 20px;
+    }
+    .houseimages{
+        width: 100%;
+    }
 
     
   }
-  
+
+  /* @media only screen and (max-width: 400px) {
+    .houseimages{
+        width: 100%;
+    }
+  }
+   */
   /* Large screens */
   @media only screen and (min-width: 600px) {
     .navbar {
@@ -83,12 +109,32 @@
 
 	.right-dash{
 		width: 50%; 
-		height: 500px; 
+		height: 100vh; 
 		float: right;
 		overflow: scroll;
 	}
 	.homemobile{
 		display: none;
 	}
+
+  .nav{
+    height: 70px;
+
+  }
+  .login{
+    margin: auto;
+    margin-top: calc((100vh - 500px) / 2);
+    width: 400px;
+      height: 400px;
+      background-color: white;
+      border: 4px solid black;
+      border-radius: 20px;
+}
+.between{
+    display: hidden;
+}
+.houseimages{
+    width: 400px;
+}
 
 }
