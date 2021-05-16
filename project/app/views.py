@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django import forms
 from django.urls import reverse
 from .models import Profile, Job, Housing, Image
+from random import choice
 
 
 # INDEX PAGE
@@ -61,6 +62,15 @@ def signup(request):
             "attempt":False
         })
 
+def houses(request):
+    all_houses = Housing.objects.all()
+    locations = {}
+    for house in all_houses:
+        if house.location not in locations:
+            locations[house.location] = [house]
+        else:
+            locations[house.location].append(house)
+    return render(request, "houses.html", {'locations': locations})
 
 def housing(request, id):
     house = Housing.objects.get(id=id)
@@ -68,7 +78,18 @@ def housing(request, id):
     return render(request, "house.html", {'images':images, "house":house})
 
 def jobs(request):
-    return render(request, "jobs.html", {"person": Profile.objects.get(email=request.session["email"])})
+    person = Profile.objects.get(email=request.session["email"])
+    suggestions = []
+    open_jobs = Job.objects.all()
+    for job in open_jobs:
+        if person.major == job.type and len(suggestions) < 4:
+            suggestions.append(job)
+    while len(suggestions) < 4:
+        job = choice(open_jobs)
+        if job not in suggestions:
+            suggestions.append(job)
+    print(suggestions)
+    return render(request, "jobs.html", {"person": Profile.objects.get(email=request.session["email"]), "suggestions": suggestions})
 
 def profile(request):
     return render(request, "profile.html", {"person": Profile.objects.get(email=request.session["email"])})

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <u1>
+            {% for loc, houses in locations.items %}
+            <h2> {{ loc }} </h2>    
+                {% for house in houses %}
+                <p> {{ house.info }} </p>
+                <a href='/housing/{{ house.id }}'>More Info</a>
+                {% endfor %}
+            {% endfor %}    
+        </u1>   
+    
+    </body>
+</html>
