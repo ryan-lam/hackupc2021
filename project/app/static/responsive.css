@@ -13,10 +13,12 @@
   
     .navbar-nav {
       flex-direction: row;
+	  justify-content:space-around;
+      align-items:center;
     }
 
     .navbar-nav li{
-        flex: 1;
+  
     }
 
   
@@ -85,6 +87,8 @@
 		float: right;
 		overflow: scroll;
 	}
-
+	.homemobile{
+		display: none;
+	}
 
 }

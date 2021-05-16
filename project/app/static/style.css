@@ -174,8 +174,6 @@
   }
 
   main{
-    width: calc(100vw - 5rem); 
-    float: right;
     box-sizing: border-box;
     height: 100vh;
 }
