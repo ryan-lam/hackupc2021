@@ -32,7 +32,7 @@
             <ul class="navbar-nav">
                 <li class="logo">
                     <a type="submit" href="dash" class="nav-link">
-                        <span class="link-text logo-text">Jobify</span>
+                        <span class="link-text logo-text">JOBFY</span>
                         <svg
                         aria-hidden="true"
                         focusable="false"
@@ -94,7 +94,7 @@
               
         
               <li class="nav-item" id="themeButton">
-                <a href="/" class="nav-link">
+                <a href="logout" class="nav-link">
                   
                   <span class="link-text">Log Out</span>
                 </a>
@@ -110,6 +110,7 @@
                     <p style="text-align: center; width: 75%; margin: auto; margin-top: 20px;">Did you know that an Apple a day keeps the doctor away?</p>
                 </div>
                 <div class="right-dash" style="background-color: coral; ">
+                  <h1>Relevant Jobs</h1>
                   {% for job in suggestions %}
                     <h2> {{ job.position }} </h2>
                     <p> {{ job.description }} </p>

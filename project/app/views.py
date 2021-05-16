@@ -14,7 +14,7 @@ def index(request):
 
         if Profile.objects.filter(email=email, password=password).exists(): # CHECK IF USER IN DB
             request.session["email"] = email
-            return render (request, "dashboard.html", {"person": Profile.objects.get(email=email)})
+            return HttpResponseRedirect(reverse(dash), {"person": Profile.objects.get(email=email)})
         else: # IF USER NOT IN DB
             return render (request, "index.html", {
                 "attempt":True
@@ -83,24 +83,33 @@ def houses(request):
             locations[house.location].append(house)
     return render(request, "houses.html", {'locations': locations, "person": Profile.objects.get(email=request.session["email"])})
 
+
 def housing(request, id):
-    house = Housing.objects.get(id=id)
-    images = Image.objects.filter(housing=house)
-    return render(request, "house.html", {'images':images, "house":house})
+    if request.method == "GET":
+        house = Housing.objects.get(id=id)
+        images = Image.objects.filter(housing=house)
+        return render(request, "house.html", {'images':images, "house":house})
 
 def jobs(request):
     person = Profile.objects.get(email=request.session["email"])
-    suggestions = []
-    open_jobs = Job.objects.all()
-    for job in open_jobs:
-        if person.major == job.type and len(suggestions) < 4:
-            suggestions.append(job)
-    while len(suggestions) < 4:
-        job = choice(open_jobs)
-        if job not in suggestions:
-            suggestions.append(job)
-    print(suggestions)
-    return render(request, "jobs.html", {"person": Profile.objects.get(email=request.session["email"]), "suggestions": suggestions})
+    # suggestions = []
+    jobs = Job.objects.all()
+    # for job in open_jobs:
+    #     if person.major == job.type and len(suggestions) < 4:
+    #         suggestions.append(job)
+    # while len(suggestions) < 4:
+    #     job = choice(open_jobs)
+    #     if job not in suggestions:
+    #         suggestions.append(job)
+    # print(suggestions)
+    return render(request, "jobs.html", {"person": Profile.objects.get(email=request.session["email"]), "jobs":jobs})
 
 def profile(request):
     return render(request, "profile.html", {"person": Profile.objects.get(email=request.session["email"])})
+
+def logout(request):
+    for key in list(request.session.keys()):
+        del request.session[key]
+    return render(request, "index.html", {
+            "attempt":False
+        })
