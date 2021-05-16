@@ -15,6 +15,8 @@ urlpatterns = [
     path("houses/dash", views.dash, name="dash"),
     path("houses/jobs", views.jobs, name="jobs"),
     path("houses/profile", views.profile, name="profile"),
+    path("job/<str:company>/<str:location>", views.job, name="job"),
+    path("houses/job/<str:company>/<str:location>", views.job, name="job"),
 ]
 
 if settings.DEBUG:

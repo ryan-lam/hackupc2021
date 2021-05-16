@@ -58,6 +58,20 @@ def housing(request, id):
         images = Image.objects.filter(housing=house)
         return render(request, "house.html", {'images':images, "house":house})
 
+def job(request, company, location):
+    if request.method == "GET":
+        print(company)
+        print(location)
+
+        job_company = company
+        job_location = location
+        print(job_company)
+        print(job_location)
+        job = Job.objects.get(company = job_company, location = job_location)
+        print(job)
+        return render(request, "job.html", {"job":job})
+
+
 def jobs(request):
     person = Profile.objects.get(email=request.session["email"])
     # suggestions = []
