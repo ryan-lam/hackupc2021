@@ -35,13 +35,8 @@
         <nav class="navbar">
             <ul class="navbar-nav">
                 <li class="logo">
-<<<<<<< HEAD
-                    <a type="submit" href="dash" class="nav-link">
-                        <span class="link-text logo-text">JOBFY</span>
-=======
                     <a href="dash" class="nav-link">
                         <span class="link-text logo-text">Jobify</span>
->>>>>>> 18ca418cc0c6bf179acdd7c243608ddb0056d208
                         <svg
                         aria-hidden="true"
                         focusable="false"
@@ -129,22 +124,14 @@
                     <p style="text-align: center; width: 75%; margin: auto; margin-top: 20px;">Did you know that an Apple a day keeps the doctor away?</p>
                 </div>
                 <div class="right-dash" style="background-color: coral; ">
-<<<<<<< HEAD
-                  {% for job in jobs %}
-                    <h2> {{ job.position }} - {{ job.company }}</h2>
-                    <p>{{ job.location }} - ${{ job.hourly_pay }} @ {{ job.hours }}/week</p>
-                    <p> {{ job.description }} </p>
-                  {% endfor %}   
-=======
                     <p>empty</p>
                 </div> -->
                 <h1 style="text-align: center; text-decoration: underline; margin-top: 20px;">Jobs Near You</h1>
-                {% for job in suggestions %}
+                {% for job in jobs %}
                 <div style="width: 90%; border-radius: 10px; background-color: #c7ecff; margin: auto; ">
                     <div style="height: 20px;"></div>
                     <h2 style="width: fit-content; margin-left: 30px;"> {{ job.position }} </h2>
                     <p style="text-align: left; width: 80%; margin-left: 30px; padding-bottom: 30px;"> {{ job.description }} </p>
->>>>>>> 18ca418cc0c6bf179acdd7c243608ddb0056d208
                 </div>
                 
                 {% endfor %}  
