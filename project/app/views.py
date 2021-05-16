@@ -27,7 +27,18 @@ def index(request):
         })
 
 def dash(request):
-    return render (request, "dashboard.html", {"person": Profile.objects.get(email=request.session["email"])})
+    person = Profile.objects.get(email=request.session["email"])
+    suggestions = []
+    open_jobs = Job.objects.all()
+    for job in open_jobs:
+        if person.major == job.type and len(suggestions) < 4:
+            suggestions.append(job)
+    while len(suggestions) < 4:
+        job = choice(open_jobs)
+        if job not in suggestions:
+            suggestions.append(job)
+    print(suggestions)
+    return render (request, "dashboard.html", {"person": Profile.objects.get(email=request.session["email"]), "suggestions": suggestions})
 
 # SIGNUP PAGE
 def signup(request):
@@ -70,7 +81,7 @@ def houses(request):
             locations[house.location] = [house]
         else:
             locations[house.location].append(house)
-    return render(request, "houses.html", {'locations': locations})
+    return render(request, "houses.html", {'locations': locations, "person": Profile.objects.get(email=request.session["email"])})
 
 def housing(request, id):
     house = Housing.objects.get(id=id)
