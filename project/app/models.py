@@ -23,13 +23,14 @@ class Profile(models.Model):
 class Job(models.Model):
     position = models.CharField(max_length=64)
     company = models.CharField(max_length=64)
-    description = models.CharField(max_length=128)
+    description = models.CharField(max_length=500)
     hourly_pay = models.IntegerField()
     hours = models.IntegerField()
     location = models.CharField(max_length=64)
+    type = models.CharField(max_length=100)
     application_link = models.CharField(max_length=128, blank=True, null=True)
     def __str__(self):
-        return f"{self.position}, {self.company}, {self.description}, {self.hourly_pay}, {self.hours}, {self.location}, {self.application_link}"
+        return f"{self.position}, {self.company}, {self.description}, {self.hourly_pay}, {self.hours}, {self.location}, {self.type}, {self.application_link}"
 
 
 class Housing(models.Model):
