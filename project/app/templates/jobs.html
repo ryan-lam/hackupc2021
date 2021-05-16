@@ -13,10 +13,20 @@
                     width: 100vw;
                 }
             }
-            h2:hover{
-                color: white;
+            a:hover{
+              color: white;
+              cursor: pointer;
+          }
+            a{
                 cursor: pointer;
+                text-decoration: none;
+                font-size: 50;
             }
+            
+    /*        h2:hover{
+              color: white;
+              cursor: pointer;
+            }*/
 
         </style>
     </head>
@@ -130,7 +140,8 @@
                 {% for job in jobs %}
                 <div style="width: 90%; border-radius: 10px; background-color: #c7ecff; margin: auto; ">
                     <div style="height: 20px;"></div>
-                    <h2 style="width: fit-content; margin-left: 30px;"> {{ job.position }} </h2>
+                    <a href="" style="width: fit-content; margin-left: 30px;"> {{ job.position }} - {{ job.company }}</a>
+                    <!-- <h2 style="width: fit-content; margin-left: 30px;"> {{ job.position }} - {{ job.company }}</h2> -->
                     <p style="text-align: left; width: 80%; margin-left: 30px; padding-bottom: 30px;"> {{ job.description }} </p>
                 </div>
                 

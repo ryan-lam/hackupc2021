@@ -114,7 +114,7 @@
 
             <main>
                 
-                <h1 style="text-align: center; margin-top: 30px;">{{ person.name }}'s Profile</h1>
+                <h1 style="text-align: center; margin-top: 30px;">Your Profile</h1>
                 <form class="identity" style="width: 80%; margin: auto; height: 500px; margin-top: 20px; background-color: white;">
                     <div style="height: 20px;"></div>
                     <label style="margin-left: 10%; font-size: 15px;">Name</label>
@@ -128,7 +128,7 @@
                         <div style="float: left; width: 45%; ">
                             <label style="font-size: 15px;">Current Gender: {{ person.gender }}</label>
                             <select class="form-select" id="inputGroupSelect02" style="margin: auto;">
-                            <option selected value="{{ person.gender }}">Choose your Gender...</option>
+                            <option selected value="{{ person.gender }}"> -- </option>
                             <option value="M">Male</option>
                             <option value="F">Female</option>
                             <option value="O">Other</option>
@@ -136,7 +136,7 @@
                         </div>
                         <div style="float: right; width: 45%;">
                             <label style="font-size: 15px;">Age</label>
-                             <input type="text" class="form-control" id="inputEmail4" name="name" placeholder="{{ person.age }}" style="margin: auto; border-radius: 10px; border: 2px solid black;">
+                             <input type="number" class="form-control" id="inputEmail4" name="name" placeholder="{{ person.age }}" style="margin: auto; border-radius: 10px; border: 2px solid black;">
                         </div>
                     </div>
                     <div style="height: 20px;"></div>
