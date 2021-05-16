@@ -116,13 +116,14 @@
 
                     <div style="margin: auto; height:50px; width: 80%; ">
                         <div style="float: left; width: 45%; ">
-                            <label style="font-size: 15px;">Your Current Gender is {{ person.gender }}</label>
+                            <label style="font-size: 15px;">Current Gender: {{ person.gender }}</label>
                             <select class="form-select" id="inputGroupSelect02" style="margin: auto;">
                             <option selected value="{{ person.gender }}">Choose your Gender...</option>
                             <option value="M">Male</option>
                             <option value="F">Female</option>
                             <option value="G">Gay</option>
                             <option value="L">Lesbian</option>
+                            <option value="L">Alien</option>
                             </select>
                         </div>
                         <div style="float: right; width: 45%;">
